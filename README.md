@@ -46,7 +46,7 @@ out skel qt;
 
 We get about 270 records  as output in geoJSON.
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_7353)
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_7353.png)
 
 Save the file (menu: Export / Data / GeoJSON / Download) as `export.geojson`.
 
