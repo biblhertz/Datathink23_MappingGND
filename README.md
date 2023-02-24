@@ -319,7 +319,7 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
     const map = new mapboxgl.Map({
         container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/light-v10', //'mapbox://styles/mapbox/streets-v12',
+        style: 'mapbox://styles/kewerner/cleh4lkpg003q01msrl463gd6', //'mapbox://styles/mapbox/light-v10',
         center: [12.481849, 41.897035],
         zoom: 15,
         hash: true
