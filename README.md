@@ -384,6 +384,8 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
 
 Upload both `index.html` and `joined.geojson` and you're done.
 
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_9871.png)
+
 You have now:
 
 - a web map with your selected polygons
