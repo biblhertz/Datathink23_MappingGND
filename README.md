@@ -174,10 +174,10 @@ If you want to display the Nolli map, install it as WMS (menu: Layer / Add Layer
 
 |       | value     |
 | ----- | ---- |
-| name  | Nolli 1748     |
-| url   | `https://api.mapbox.com/styles/v1/kewerner/cjtporgz8099b1fp7g6y2wdt5/wmts?access_token=pk.eyJ1Ijoia2V3ZXJuZXIiLCJhIjoiY2lqMGprNjVmMDA0NnYwbTVibHh5bWx6aSJ9.zB8-7hnUeIeYJsqzOjJ2Fg` |
+| name  | Sepia & Nolli     |
+| url   | `https://api.mapbox.com/styles/v1/kewerner/clei8a8og000401mny1num8ol/wmts?access_token=pk.eyJ1Ijoia2V3ZXJuZXIiLCJhIjoiY2lqMGprNjVmMDA0NnYwbTVibHh5bWx6aSJ9.zB8-7hnUeIeYJsqzOjJ2Fg` |
 
-Click Ok, Connect, Add the »Nolli 1748« Layer and Close. You should see a nice background.
+Click Ok, Connect, Add the »Sepia & Nolli« Layer and Close. You should see a nice background.
 
 [ image ]
 
@@ -185,19 +185,19 @@ Click Ok, Connect, Add the »Nolli 1748« Layer and Close. You should see a nice
 
 Now we import both tables as layers.
 
-For the **OSM data**, import the `export.geojson` file: menu Add / Add Layer / Add Vector Layer and File / Source: `export.geojson`.  
+For the **OSM data**, import the `export.geojson` file: menu *Add* / *Add Layer* / *Add Vector Layer* and *File* / *Source*: `export.geojson`.  
 
-Leave the Options, as the default ones are just fine. Click Add and Close.
+Leave the Options, as the default ones are just fine. Click *Add* and *Close*.
 
 You now have a new layer called »export« on your map:
 
 [ image ]
 
-For the **Wikidata data**, import the the `query.csv` file: menu Add / Add Layer / Add Delimited Text Layer and File name: `query.csv`.
+For the **Wikidata data**, import the the `query.csv` file: menu *Add* / *Add Layer* / *Add Delimited Text Layer* and *File name*: `query.csv`.
 
-Leave File Format as CSV (comma separated values) but change Geometry Definition to "No geometry (attribute table only)".
+Leave *File Format* as CSV (comma separated values) but change *Geometry Definition* to "No geometry (attribute table only)".
 
-Click Add and Close.
+Click *Add* and *Close*.
 
 You now have a new layer called »query«.
 
@@ -245,11 +245,13 @@ Leave *Layer options* in default and *custom options* blank, and *Add saved file
 
 ##  Step 4:  Presentation on Mapbox Platform
 
-We need webspace for hosting our GeoJSON and HTML files. Github works just fine.
+We now have the data and the vector piolygons together in one file. 
 
-But we also need a map service like Leaflet, Arcgis or Mapbox which gives us the actual cartographic context.
+We will need some webspace for hosting our GeoJSON and HTML files. Github works just fine. Otherwise contact your admin 👍
 
-For this exercise, we use Mapbox.
+But we also need a map service like Leaflet, ArcGis or Mapbox which gives us the actual cartographic context. You wouldn't want to start your own server, would you?
+
+Fortunately, there is ample choice of web map solutions. For this exercise, we use Mapbox, which is mostly free.
 
 First, and obviously, create an account on [mapbox.com](https://www.mapbox.com/).
 
@@ -375,3 +377,12 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
 
 Upload both `index.html` and `joined.geojson` and you're done.
 
+You have now:
+
+- a web map with your selected polygons
+- links to data for these resources in the photographic collection and the library
+- a link to WikiData for any other relevant resource
+
+Keep in mind that this is **only a visual**, but you can use the same trick with any other ID to connect the parts inside much bigger systems.
+
+--kew  24/ii mmxxiii
