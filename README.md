@@ -18,7 +18,7 @@ Let's have a look at for example the church of Sant’Eustachio in Campo Marzio:
 
 https://www.openstreetmap.org/way/128740195#map=19/41.89865/12.47573 
 
-[image]
+[image](Screenshot_9282.png)
 
 ### The Overpass Query
 
