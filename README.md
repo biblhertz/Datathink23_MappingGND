@@ -2,13 +2,19 @@
 
 ## Sample Project: Churches in Rome
 
-In the example, we look for church buildings in the center of Rome.
+In this sample project, we look for church buildings in the center of Rome and try to connect them to our bibliographic and photographic holdings - using the common GND entitiy.
 
 ## Step 1:  Choosing the Places in OSM
 
+The starting point are the churches themselves. Since we don't have direct access to the municipal cataster (which BTW is not as updated as one would like) we use the OpenStreetMap data. That way, we have vector data we can freely use (and abuse) and publish!
+
+If anyone is still unsure about OpenStreetMap: it's the global mapping initiative started in 2004 with now over 10 Million contributors, and updates every minute. Everything is covered by the Open Database license, similar to the Creative Commons SA-BY.
+
 ### The OpenStreetMap Way of Mapping
 
-Sample church: Sant’Eustachio in Campo Marzio
+The Openstreetmap way of mapping is by way of Nodes, Ways and Relations: points, polyons and multipolygons in technical speak.
+
+Let's have a look at for example the church of Sant’Eustachio in Campo Marzio:
 
 https://www.openstreetmap.org/way/128740195#map=19/41.89865/12.47573 
 
@@ -16,13 +22,13 @@ https://www.openstreetmap.org/way/128740195#map=19/41.89865/12.47573
 
 ### The Overpass Query
 
-["building"="church"] OR ["amenity"="place_of_worship"] ?
+Since OpenStreetMap is at the heart a giant database in PostGreSQL we can easily make a query and get the relative polygons. We use the Overpass editor:  https://overpass-turbo.eu/
 
 In the Overpass query we use 3 filters:
 
 - a bounding box of South 41.881, West 12.450, North 41.913, East 12.511
 - the parameter `buildings=church` in order to filter out the crap like kiosks, bars, restaurants
-- the parameter `wikidata` in order to ignore all churches without wikidata ID - because we woulnd‹t be able to connect these to Wikidata anyway. In an ideal world, one would take his time and manually append the relevant IDs.
+- the parameter `wikidata` in order to ignore all churches without wikidata ID - because we wouldn't be able to connect these to Wikidata anyway.
 
 ```SPARQL
 [out:json][timeout:25];
