@@ -292,7 +292,7 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
 	        width: fit-content;
     	    padding: 2em;
 	        color: dimgray;
-    	    background-color: rgb(250, 250, 250);
+    	    background-color: rgb(220, 220, 220);
 	        border-radius: 8px;
 	        border: thin outset white;
     	    white-space: nowrap;
@@ -336,7 +336,7 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
             'type': 'fill',
             'source': 'churches',
             'paint': {
-                'fill-color': 'rgba(100,100,100,0.5)',
+                'fill-color': 'rgba(250,200,100,0.5)',
                 'fill-outline-color': 'white'
             }
         });
