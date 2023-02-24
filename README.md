@@ -182,6 +182,8 @@ If you want to display the Nolli map, install it as WMS (menu: Layer / Add Layer
 
 Click Ok, Connect, Add the »Sepia & Nolli« Layer and Close. You should see a nice background.
 
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_3638.png)
+
 [ image ]
 
 #### Data Import
@@ -222,6 +224,8 @@ FROM export
 LEFT JOIN query on place='http://www.wikidata.org/entity/'||COALESCE(export.wikidata, '')
 WHERE gnd NOT NULL
 ```
+
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_2468.png)
 
 Choose *Load as new layer* and both *Column with unique values:* `id` and *Geometry column:* `geometry`. 
 
