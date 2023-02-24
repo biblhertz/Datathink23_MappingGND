@@ -18,7 +18,7 @@ Let's have a look at for example the church of Sant’Eustachio in Campo Marzio:
 
 https://www.openstreetmap.org/way/128740195#map=19/41.89865/12.47573 
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_9282.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_9282.png)
 
 ### The Overpass Query
 
@@ -46,7 +46,7 @@ out skel qt;
 
 We get about 270 records  as output in geoJSON.
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_7353.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_7353.png)
 
 Save the file (menu: Export / Data / GeoJSON / Download) as `export.geojson`.
 
@@ -129,7 +129,7 @@ WHERE {
 } 
 ORDER BY ?placeLabel LIMIT 1000
 ```
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_2846.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_2846.png)
 
 In this query:
 
@@ -182,7 +182,7 @@ If you want to display the Nolli map, install it as WMS (menu: Layer / Add Layer
 
 Click Ok, Connect, Add the »Sepia & Nolli« Layer and Close. You should see a nice background.
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_3638.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_3638.png)
 
 [ image ]
 
@@ -225,7 +225,7 @@ LEFT JOIN query on place='http://www.wikidata.org/entity/'||COALESCE(export.wiki
 WHERE gnd NOT NULL
 ```
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_2468.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_2468.png)
 
 Choose *Load as new layer* and both *Column with unique values:* `id` and *Geometry column:* `geometry`. 
 
@@ -324,14 +324,12 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
         zoom: 15,
         hash: true
     });
-
     map.on('load', () => {
 // Add a source for the state polygons.
         map.addSource('churches', {
             'type': 'geojson',
             'data': 'joined.geojson'
         });
-
 // Add a layer showing the state polygons.
         map.addLayer({
             'id': 'churches-layer',
@@ -342,7 +340,6 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
                 'fill-outline-color': 'white'
             }
         });
-
 // When a click event occurs on a feature in the states layer,
 // open a popup at the location of the click, with description
 // HTML from the click event's properties.
@@ -363,13 +360,11 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
                 )
                 .addTo(map);
         });
-
 // Change the cursor to a pointer when
 // the mouse is over the states layer.
         map.on('mouseenter', 'states-layer', () => {
             map.getCanvas().style.cursor = 'pointer';
         });
-
 // Change the cursor back to a pointer
 // when it leaves the states layer.
         map.on('mouseleave', 'states-layer', () => {
@@ -384,7 +379,7 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
 
 Upload both `index.html` and `joined.geojson` and you're done.
 
-![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_9871.png)
+![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_9871.png)
 
 You have now:
 
