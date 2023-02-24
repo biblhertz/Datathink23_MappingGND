@@ -387,6 +387,8 @@ You have now:
 - links to data for these resources in the photographic collection and the library
 - a link to WikiData for any other relevant resource
 
-Keep in mind that this is **only a visual**, but you can use the same trick with any other ID to connect the parts inside much bigger systems.
+Keep in mind that this is **only a visualization**, and a rather crude one: you still manually have to click the links.
 
---kew  24/ii mmxxiii
+But the trick of connecting data from different information systems with a map presentation by using a wikidata ID can be useful in many scenarios.
+
+*--kew  24/ii ab n.d. mmxxiii*
