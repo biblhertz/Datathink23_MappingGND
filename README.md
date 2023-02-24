@@ -381,6 +381,8 @@ Upload both `index.html` and `joined.geojson` and you're done.
 
 ![img](https://raw.githubusercontent.com/biblhertz/Datathink23_MappingGND/main/Screenshot_9871.png)
 
+A web version here: [http://maps.kewerner.name/datathink/](http://maps.kewerner.name/datathink/)
+
 You have now:
 
 - a web map with your selected polygons
