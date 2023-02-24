@@ -27,7 +27,9 @@ Since OpenStreetMap is at the heart a giant database in PostGreSQL we can easily
 In the Overpass query we use 3 filters:
 
 - a bounding box of South 41.881, West 12.450, North 41.913, East 12.511
+
 - the parameter `buildings=church` in order to filter out the crap like kiosks, bars, restaurants
+
 - the parameter `wikidata` in order to ignore all churches without wikidata ID - because we wouldn't be able to connect these to Wikidata anyway.
 
 ```SPARQL
@@ -95,27 +97,17 @@ As you see, most of them (about 250) have a wikidata ID:
 }
 ```
 
-They don‹t have a GND ID … that would be too much to ask for … but we get this ID in the second step from Wikidata!
+They don‹t have a GND ID … that would be too much to ask for … but we get this vital ID in the second step from Wikidata!
 
 ## Step 2:  Getting the Records from WikiData
 
-### The (Meta)Data present in WikiData
-
-GND
-
-ICCD
-
-VIAF
-
-OCLC
-
-…
+In order to get the GND ID - which we need to connect the vectors form Openstreetmap with our institutional databases - we have to take a detour: we look at Wikidata, where every possible ID - Getty, VIAF, ICCD (for Italian heritage), Arachne (for archeology), and many many others are stored.
 
 ### The WikiData Query
 
-We now try to get the data from WikiData using the ID we harvested from OpenStreetMap.
-
 Here is the website for querying WikiData: [https://query.wikidata.org](https://query.wikidata.org)
+
+This is our query:
 
 ```SPARQL
 SELECT DISTINCT ?place ?placeLabel ?gnd ?iccd ?image
@@ -138,16 +130,21 @@ ORDER BY ?placeLabel LIMIT 1000
 
 In this query:
 
-1. We again ask for items at in the center of Rome (square bounding box cornerSW/NE).
-2. We are only interested in items having an GND ID (`wdt:P227`).
-3. We filtered for only items which are *instance of* (`wdt:P31`) or *subclass of* (`wdt:P279`) of any *religious building* (`wd:Q16970`). This is non real equivalent for building=church in OSM, but close. 
-4. We asked to list the Wikidata ID (`?place`), its name (`?placeLabel`) in Italian, and its GND ID (`?gnd`). 
+- We again ask for items at in the center of Rome (square bounding box cornerSW/NE).
+
+- We are only interested in items having an GND ID (`wdt:P227`).
+
+- We filtered for only items which are *instance of* (`wdt:P31`) or *subclass of* (`wdt:P279`) of a *religious building* (`wd:Q16970`). This is non real equivalent for building=church in OSM, but close. 
+
+- We asked to list the Wikidata ID (`?place`), its name (`?placeLabel`) in Italian, and its GND ID (`?gnd`). 
 
 nb. Obviously you can also look for more than one kind of building[^1].
 
 [^1]: The relevant line instead of `?place wdt:P31/wdt:P279* wd:Q16970 .` would then be: `VALUES ?instance { wd:Q24398318 wd:Q14752696 wd:Q109607 wd:Q16560 wd:Q16970 wd:Q160742 wd:Q23413 wd:Q1128397 wd:Q1195705 wd:Q12518 wd:Q839954 wd:Q815448 wd:Q120560 wd:Q1649060 wd:Q580499 wd:Q19899465 wd:Q483453 wd:Q557141 wd:Q44613 wd:Q82117 }`.
 
-We get back a nice list of 140 records. Ok, it‹s only 140 … 
+We get back a nice list of 140 records. Ok, it‹s only 140 … not 270 ... but it's a start. Someone has to fix the other 130 ones!
+
+Here's a look at the output:
 
 |                                                        |                                       |           |          |
 | :----------------------------------------------------- | :------------------------------------ | :-------- | :------- |
@@ -161,7 +158,11 @@ Save this data (menu Download Result / CSV file) as `query.csv`.
 
 ## Step 3:   Joining OSM & Wikidata in QGIS
 
-### The QGIS application
+Now we have to combine the data we have from OpenStreetMap (the vectors) with the data from Wikidata (the IDs).
+
+In order to make the join query, iand in order to have something visual, we use QGIS.
+
+https://www.qgis.org
 
 In QGIS, make a new Project and save it as `ChurchesRome.qgz`.
 
