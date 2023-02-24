@@ -46,6 +46,8 @@ out skel qt;
 
 We get about 270 records  as output in geoJSON.
 
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_7353)
+
 Save the file (menu: Export / Data / GeoJSON / Download) as `export.geojson`.
 
 As you see, most of them (about 250) have a wikidata ID:
@@ -127,6 +129,7 @@ WHERE {
 } 
 ORDER BY ?placeLabel LIMIT 1000
 ```
+![img](https://github.com/biblhertz/Datathink23_MappingGND/blob/main/Screenshot_2846.png)
 
 In this query:
 
