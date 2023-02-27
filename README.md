@@ -322,7 +322,7 @@ Then, get a token for your project: https://account.mapbox.com/access-tokens/cre
 <body>
 <div id="map"></div>
 <script>
-    mapboxgl.accessToken = 'pk.YOUR_TOKEN_HERE';
+    mapboxgl.accessToken = 'pk.YOUR_TOKEN_HERE';      //Put in YOUR actual token created in Mapbox!
     // Create a new map.
     const map = new mapboxgl.Map({
         container: 'map',
