@@ -123,7 +123,7 @@ WHERE {
   OPTIONAL {    ?place wdt:P6286 ?iccd  }   
   OPTIONAL {    ?place wdt:P18 ?image  }   
   FILTER EXISTS {
-    ?place wdt:P31/wdt:P279* wd:Q16970 .
+    ?place wdt:P31/wdt:P279* wd:Q16970 .  # wd:Q16970 stands for "Church building"
   }
   SERVICE wikibase:label { bd:serviceParam wikibase:language "it". } 
 } 
