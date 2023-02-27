@@ -145,7 +145,7 @@ nb. Obviously you can also look for more than one kind of building[^1].
 
 [^1]: The relevant line instead of `?place wdt:P31/wdt:P279* wd:Q16970 .` would then be: `VALUES ?instance { wd:Q24398318 wd:Q14752696 wd:Q109607 wd:Q16560 wd:Q16970 wd:Q160742 wd:Q23413 wd:Q1128397 wd:Q1195705 wd:Q12518 wd:Q839954 wd:Q815448 wd:Q120560 wd:Q1649060 wd:Q580499 wd:Q19899465 wd:Q483453 wd:Q557141 wd:Q44613 wd:Q82117 }`.
 
-We get back a nice list of 140 records. Ok, it‹s only 140 … not 270 ... but it's a start. Someone has to fix the other 130 ones!
+We get back a nice list of 140 records. Ok, it‹s only 140 … not 270 ... but it's a start. Someone has to fix the other 130 ones where Wikidata has no GND information.
 
 Here's a look at the output:
 
