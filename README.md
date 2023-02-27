@@ -173,7 +173,15 @@ In QGIS, make a new Project and save it as `ChurchesRome.qgz`.
 
 If you want to have a basic map layer, install the plugin QuickMapsServices (menu: Plugins / Install and Manage Plugins / All / Search: QuickMapServices / Install Plugin) and then add the OSM map (menu: Web / QuickMapsServices / OSM / OSM Standard).
 
-If you want to display the Nolli map, install it as WMS (menu: Layer / Add Layer / Add WMS/WMST Layer) and connect with the WMS source (menu: New):
+If you want to display the latest archaeological findings, install it as WMS (menu: Layer / Add Layer / Add WMS/WMST Layer) and connect with the WMS source (menu: New):
+
+|       | value     |
+| ----- | ---- |
+| name  | Sepia & ArcheoSitar     |
+| url   | `https://api.mapbox.com/styles/v1/kewerner/cleh4lkpg003q01msrl463gd6/wmts?access_token=pk.eyJ1Ijoia2V3ZXJuZXIiLCJhIjoiY2lqMGprNjVmMDA0NnYwbTVibHh5bWx6aSJ9.zB8-7hnUeIeYJsqzOjJ2Fg` |
+
+
+If instead you want to display the Nolli map, install it as WMS, too:
 
 |       | value     |
 | ----- | ---- |
